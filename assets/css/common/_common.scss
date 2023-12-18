@@ -1,0 +1,194 @@
+$black: #222222;
+$white: #ffffff;
+$mainColor: #ED1C24;
+$gray01: #aaaaaa;
+$gray02: #cccccc;
+$gray03: #dddddd;
+$gray04:#eeeeee;
+$gray05: #656565;
+$darkblue: #253149;
+$darkgray: #5D626E;
+$play: 'Play', sans-serif;
+$container : calc(100% - 4rem);
+$max-con : 1464px;
+
+@mixin border($width, $color) {border: $width solid $color;}
+@mixin flexbox($direction, $justfy, $align){
+	display:flex;
+    flex-direction: $direction;
+    justify-content: $justfy;
+    align-items: $align;
+}
+@mixin ellipsis($num: 1) {
+    @if ($num == 1) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $num;
+    }
+}
+@mixin background ($folder: folder_name, $img: file, $type: png, $repeat:no-repeat, $size, $x:0, $y:0) {
+    background-image: url(../images/#{$folder}/#{$img}.#{$type});
+    background-repeat: #{$repeat};
+    background-size: #{$size}; 
+    background-position: #{$x} #{$y};
+} 
+
+/* 반응형 분기점(노트북) */
+@mixin notebook{
+    @media (max-width: 1060px){ 
+        @content;
+    }
+}
+
+*{box-sizing: border-box;}
+html{font-size: 10px;}
+
+body{
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-family: 'Poppins';
+    *{
+        font-weight: 400;
+        color: $black;
+    }
+}
+
+.hide{
+    position: absolute;
+    width: 1px!important;
+    height: 1px!important;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.con-box{
+    width: calc(100% - 4rem);
+    max-width: 1730px;
+    margin: 0 auto;
+}
+
+// 기본 아래로노출
+.select{
+    position: relative;
+    width: 16rem;
+    z-index: 9;
+    @include notebook{width: 12.2rem;}
+    // 리스트 위로노출
+    &.type01{
+        .select-list{
+            top: auto;
+            bottom: 4rem;
+            @include notebook{bottom: 2.8rem;}
+        }
+    }
+    // 언어 셀렉트(나라별 국기)
+    &.language{
+        .select-tit{
+            &::before{
+                content: '';
+                width: 3rem;
+                height: 2rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 0.8rem;
+                @include notebook{
+                    width: 2.4rem;
+                    height: 1.6rem;
+                }
+            }
+            &.kor{&::before{@include background(national_flag, kor, png, no-repeat, contain, center, center);}}
+            &.usa{&::before{@include background(national_flag, usa, png, no-repeat, contain, center, center);}}
+        }
+        .select-list{
+            > li{
+                &::before{
+                    content: '';
+                    width: 3rem;
+                    height: 2rem;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 0.8rem;
+                    @include notebook{
+                        margin-right: .6rem;
+                        width: 2.4rem;
+                        height: 1.6rem;
+                    }
+                }
+                &[name="KOR"]{&::before{@include background(national_flag, kor, png, no-repeat, contain, center, center)}}
+                &[name="ENG"]{&::before{@include background(national_flag, usa, png, no-repeat, contain, center, center)}}
+            }
+        }
+    }
+    &-tit{
+        position: relative;
+        width: 100%;
+        height: 4rem;
+        padding: 0.8rem 3.8rem 0.8rem 0.8rem;
+        background: $white;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        gap: .8rem;
+        @include border(1px, $gray04);
+        @include ellipsis(1);
+        @include notebook{
+            height: 2.8rem;
+            line-height: 2rem;
+            padding: 0.4rem 2.6rem 0.4rem 0.4rem;
+        }
+        &::after{
+            content: '';
+            width: 2.4rem;
+            height: 2.4rem;
+            position: absolute;
+            top: 50%;
+            right: 1.2rem;
+            transform: translateY(-50%);
+            transition: all .35s;
+            @include background(icon, select_arrow, png, no-repeat, contain, center, center); 
+            @include notebook{
+                width: 2rem;
+                height: 2rem;
+                right: .4rem;
+            }
+        }
+        &.on{&::after{transform: translateY(-50%) rotate(180deg);}}
+    }
+    &-list{
+        display: none;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        background: $white;
+        @include border(1px, $gray04);
+        @include notebook{top: 2.8rem;}
+        > li{
+            width: 100%;
+            height: 4rem;
+            padding: .8rem;
+            background: $white;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            cursor: pointer;
+            transition: all .25s;
+            @include ellipsis(1);
+            &:hover{background: $gray04;}
+            @include notebook{
+                height: 2.8rem;
+                line-height: 2rem;
+                padding: .4rem;
+            }
+        }
+    }
+}
