@@ -9,8 +9,6 @@ $gray05: #656565;
 $darkblue: #253149;
 $darkgray: #5D626E;
 $play: 'Play', sans-serif;
-$container : calc(100% - 4rem);
-$max-con : 1464px;
 
 @mixin border($width, $color) {border: $width solid $color;}
 @mixin flexbox($direction, $justfy, $align){
@@ -78,6 +76,7 @@ body{
     margin: 0 auto;
 }
 
+/* custom select */
 // 기본 아래로노출
 .select{
     position: relative;
@@ -191,4 +190,39 @@ body{
             }
         }
     }
+}
+
+/* 리스트타입 */
+.list-type{
+    > li{
+        position: relative;
+        color: #7E7E7E;
+        font-size: 1.4rem;
+        line-height: 1.4;
+        padding-left: 1rem;
+        &::before{
+            content: '•';
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+/* 버튼(공통) */
+.btn-wrap{
+    gap: 1rem;
+    @include flexbox(row, flex-start, center);
+}
+button{
+    min-width: 12rem;
+    max-height: 4.4rem;
+    padding: 1rem 1.2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: $black;
+    text-align: center;
+    background: $white;
+    border-radius: 3rem;
+    border: 1px solid $black;
 }

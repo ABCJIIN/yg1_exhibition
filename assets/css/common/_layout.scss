@@ -1,10 +1,12 @@
 @import "common";
+@import "font";
 
 /* 공통 레이아웃 */
 #wrapper{
     @include background(common, cont_bg, png, no-repeat, cover, center, center);
     #wrap{
-        min-height: 100vh;
+        // min-height: 100vh;
+        height: 100vh;
         position: relative;
         &:not(.main){
             padding: 6rem 4rem 13rem;
@@ -14,9 +16,9 @@
                 @include notebook{height: calc(100vh - 9.8rem);}
             }
             .wrap-inner{
-                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                box-shadow: rgba($black, 0.2) 0px 7px 29px 0px;
                 > img{width: 100%;}
-                &::-webkit-scrollbar{width: 8px;}
+                &::-webkit-scrollbar{width: 8px;height: 8px;}
                 &::-webkit-scrollbar-thumb{
                     background: #B1B1B1;
                     border-radius: .4rem;
@@ -109,7 +111,7 @@
             text-indent: -9999em;
             overflow: hidden;
             background: $white;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba($black, 0.2) 0px 7px 29px 0px;
             @include flexbox(row, center, center);
             &::after{
                 content: '';
@@ -334,28 +336,6 @@ footer{
                     &:not(:first-child){margin-top: 1.2rem;}
                 }
             }
-        }
-    }
-}
-
-// 퀵메뉴
-#quickMenu {
-    position: fixed;
-    right: 7%;
-    bottom: 14rem;
-    z-index: 99;
-    .controls{
-        > a{
-            width: 4.8rem;
-            height: 4.8rem;
-            margin: 0.8rem 0;
-            display: block;
-            border-radius: 50%;
-            background: $gray04;
-            text-indent: -9999em;
-            overflow: hidden;
-            &.up{@include background(icon, arrow_icon03, png, no-repeat, 60%, center, center)}
-            &.down{@include background(icon, arrow_icon04, png, no-repeat, 60%, center, center)}
         }
     }
 }
