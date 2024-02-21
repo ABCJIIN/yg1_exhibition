@@ -197,7 +197,7 @@ body{
     > li{
         position: relative;
         color: #7E7E7E;
-        font-size: 1.4rem;
+        font-size: clamp(12px , .75vw , 1.4rem);
         line-height: 1.4;
         padding-left: 1rem;
         &::before{
@@ -215,10 +215,12 @@ body{
     @include flexbox(row, flex-start, center);
 }
 button{
-    min-width: 12rem;
+    min-width: clamp(8rem, 6.35vw, 12rem);
     max-height: 4.4rem;
     padding: 1rem 1.2rem;
-    font-size: 2rem;
+    padding-top: clamp( .5rem, .55vw , 1rem);
+    padding-bottom: clamp(.5rem, .55vw , 1rem);
+    font-size: clamp(12px, 1.05vw, 2rem);
     font-weight: 500;
     color: $black;
     text-align: center;
