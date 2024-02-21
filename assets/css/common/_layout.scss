@@ -61,7 +61,7 @@
     }
     > ul {
         padding-left: clamp(2rem, 1.5vw, 6rem);
-        gap: clamp(1.6rem, 1.5vw, 4rem);
+        gap: clamp(1.6rem, 2.1vw, 4rem);
         @include flexbox(column, flex-start, flex-start);
         li {
             position: relative;

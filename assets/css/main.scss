@@ -120,13 +120,13 @@
             .con-tit{
                 > strong{
                     font-family: $play;
-                    font-size: 4rem;
+                    font-size: clamp(2rem, 2.2vw, 4rem);
                     font-weight: bold;
                     border-bottom: 2px solid $mainColor;
                 }
             }
             &-list{
-                margin-top: 8.6rem;
+                margin-top: clamp(5rem, 9.5vh,8.6rem);
                 display: flex;
                 > div{
                     padding: 0 3vw;
@@ -141,9 +141,9 @@
                         position: relative;
                         .tit-tag{
                             display: inline-block;
-                            padding: 1.2rem 2rem;
+                            padding: 1.3vh 1.05vw;
                             color: $white;
-                            font-size: 2rem;
+                            font-size: clamp(12px, 1vw, 2rem);
                             font-weight: 600;
                             background: $mainColor;
                             position: absolute;
@@ -171,14 +171,14 @@
                                 visibility: hidden;
                                 @include flexbox(row, center, center);
                                 > ul{
-                                    gap: 1rem;
+                                    gap: .45vw;
                                     @include flexbox(column, flex-start, flex-start);
                                     li{
                                         a{
-                                            width: 13.5rem;
-                                            padding: .8rem;
+                                            width: clamp(8rem, 7vw, 13.5rem);
+                                            padding: clamp(.4rem, .45vw , .8rem);
                                             border-radius: 3rem;
-                                            font-size: 2rem;
+                                            font-size: clamp(12px, 1.05vw ,2rem);
                                             font-weight: 500;
                                             text-align: center;
                                             background: $white;
@@ -202,14 +202,14 @@
                         .txt-wrap{
                             margin-top: 2rem;
                             > strong{
-                                font-size: 2.4rem;
+                                font-size: clamp(14px, 1.25vw, 2.4rem);
                                 font-weight: 600;
                                 + .list-type{margin-top: 1rem;}
                             }
                             .tag-list{
                                 > li{
                                     gap: .8rem;
-                                    font-size: 2.4rem;
+                                    font-size: clamp(14px, 1.25vw, 2.4rem);
                                     font-weight: 600;
                                     @include flexbox(row, flex-start, center);
                                     &:not(:first-child){margin-top: .8rem;}
@@ -217,9 +217,12 @@
                                         padding: .6rem .8rem;
                                         border-radius: .4rem;
                                         background: $darkblue;
-                                        font-size: 1.6rem;
+                                        font-size: clamp(12px, .85vw, 1.6rem);
                                         font-weight: 600;
                                         color: $white;
+                                        @include notebook {
+                                            padding: .4rem .5rem;
+                                        }
                                     }
                                 }
                             }
@@ -229,32 +232,36 @@
             }
         }
         .pd-series{
-            margin-top: 6.4rem;
+            margin-top: 4%;
             .con-box{
                 box-shadow: rgba($black, 0.2) 7px 7px 29px -7px;
                 border-radius: 2rem;
                 padding: 3.2rem 4.8rem;
-                flex-wrap: wrap;
                 gap: 2rem;
                 @include flexbox(row, space-between, flex-start);
+                @include notebook {
+                    padding: 1.6rem 2.4rem;
+                }
             }
             .con-tit{
+                width: 21%;
                 strong{
-                    font-size: 2.4rem;
+                    font-size: clamp(14px ,1.3vw , 2.4rem);
                     font-weight: 600;
                     line-height: 1.4;
                     + .btn-wrap{margin-top: 2.4rem;}
                 }
             }
             &-list{
-                width: 100%;
-                max-width: 1048px;
+                width: 79%;
                 > ul{
-                    gap: 1.2rem;
+                    width: 100%;
+                    gap: .6vw;
                     @include flexbox(row, flex-start, flex-start);
                     > li{
+                        width: calc(100% / 5 - 4.8rem);
                         flex: 1;
-                        padding: 1.2rem;
+                        padding: .65vw;
                         text-align: center;
                         @include border(1px, #E4EBEF);
                         .img-wrap{
@@ -263,7 +270,10 @@
                                 max-width: 100%;
                             }
                         }
-                        > strong{font-weight: 600;}
+                        > strong{
+                            font-weight: 600;
+                            font-size: clamp(12px, 1vw, 1.6rem);
+                        }
                     }
                 }
             }
