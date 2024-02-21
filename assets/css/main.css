@@ -1135,7 +1135,12 @@ footer .ft-info .lang-wrap .tit::before {
   padding: 2.6rem 0 6rem;
 }
 #wrap .pd-wrap .con-box {
-  max-width: calc(100% - 12rem);
+  max-width: calc(100% - 6.5vw);
+}
+@media (max-width: 1060px) {
+  #wrap .pd-wrap .con-box {
+    max-width: calc(100% - 8rem);
+  }
 }
 #wrap .pd-wrap .pd-detail .con-tit > strong {
   font-family: "Play", sans-serif;
@@ -1144,7 +1149,7 @@ footer .ft-info .lang-wrap .tit::before {
   border-bottom: 2px solid #ED1C24;
 }
 #wrap .pd-wrap .pd-detail-list {
-  margin-top: clamp(5rem, 9.5vh, 8.6rem);
+  margin-top: clamp(4rem, 8vh, 8.6rem);
   display: flex;
 }
 #wrap .pd-wrap .pd-detail-list > div {
