@@ -230,6 +230,12 @@ button {
   border-radius: 3rem;
   border: 1px solid #222222;
 }
+button:active {
+  border-color: #ED1C24;
+  background: #ED1C24;
+  color: #ffffff;
+  transition: all 0.25s;
+}
 
 /* noto sans */
 @font-face {
@@ -496,6 +502,12 @@ button {
   background: #ffffff;
   border-radius: 3rem;
   border: 1px solid #222222;
+}
+button:active {
+  border-color: #ED1C24;
+  background: #ED1C24;
+  color: #ffffff;
+  transition: all 0.25s;
 }
 
 /* noto sans */

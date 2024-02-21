@@ -225,4 +225,10 @@ button{
     background: $white;
     border-radius: 3rem;
     border: 1px solid $black;
+    &:active {
+        border-color: $mainColor;
+        background: $mainColor;
+        color: $white;
+        transition: all .25s;
+    }
 }
