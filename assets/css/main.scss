@@ -115,7 +115,12 @@
     // 서브콘텐츠(제품상세페이지)
     .pd-wrap{
         padding: 2.6rem 0 6rem;
-        .con-box{max-width: calc(100% - 12rem);}
+        .con-box{
+            max-width: calc(100% - 6.5vw);
+            @include notebook {
+                max-width: calc(100% - 8rem);
+            }
+        }
         .pd-detail{
             .con-tit{
                 > strong{
@@ -126,7 +131,7 @@
                 }
             }
             &-list{
-                margin-top: clamp(5rem, 9.5vh,8.6rem);
+                margin-top: clamp(4rem, 8vh,8.6rem);
                 display: flex;
                 > div{
                     padding: 0 3vw;
