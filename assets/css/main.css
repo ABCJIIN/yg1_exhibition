@@ -1324,4 +1324,6 @@ footer .ft-info .lang-wrap .tit::before {
 #wrap .pd-wrap .pd-series-list > ul > li > strong {
   font-weight: 600;
   font-size: clamp(12px, 1vw, 1.6rem);
+  word-wrap: break-word;
+  word-break: keep-all;
 }
