@@ -137,10 +137,10 @@
                     padding: 0 3vw;
                     &:first-child{
                         padding-left: 1.5vw;
-                        max-width: 37%;
+                        width: 39%;
                     }
-                    &:nth-child(2){max-width: 40%;}
-                    &:last-child{max-width: 25%;}
+                    &:nth-child(2){width: 39%;}
+                    &:last-child{width: 22%;}
                     &:not(:last-child){border-right: 1px solid $gray03;}
                     .item-cont{
                         position: relative;
