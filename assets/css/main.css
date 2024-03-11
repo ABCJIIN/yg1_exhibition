@@ -1292,6 +1292,7 @@ footer .ft-info .lang-wrap .tit::before {
 }
 #wrap .pd-wrap .pd-series-list > ul > li {
   width: 100%;
+  max-width: 20%;
   padding: 0.65vw;
   text-align: center;
   border: 1px solid #E4EBEF;
