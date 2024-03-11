@@ -647,6 +647,7 @@ button:active {
 }
 #lnb > ul li a {
   position: relative;
+  display: inline;
   font-size: 2.4rem;
   font-size: clamp(1.4rem, 1.5vw, 2.4rem);
   font-family: "Play", sans-serif;
