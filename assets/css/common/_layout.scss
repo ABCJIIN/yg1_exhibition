@@ -18,17 +18,17 @@
             .wrap-inner{
                 box-shadow: rgba($black, 0.2) 0px 7px 29px 0px;
                 > img{width: 100%;}
-                &::-webkit-scrollbar{width: 8px;height: 8px;}
-                &::-webkit-scrollbar-thumb{
-                    background: #B1B1B1;
-                    border-radius: .4rem;
-                }
-                &::-webkit-scrollbar-track{background: $white;}
+                // &::-webkit-scrollbar{width: 8px;height: 8px;}
+                // &::-webkit-scrollbar-thumb{
+                //     background: #B1B1B1;
+                //     border-radius: .4rem;
+                // }
+                // &::-webkit-scrollbar-track{background: $white;}
             }
         }
         .wrap-inner{
-            overflow-x: auto;
             position: relative;
+            overflow-x: auto;//vintpub 계정에서는 overflow:hidden 으로 되어있음
         }
     }
 }

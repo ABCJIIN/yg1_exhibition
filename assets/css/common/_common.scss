@@ -198,14 +198,17 @@ body{
         position: relative;
         color: #7E7E7E;
         font-size: clamp(12px , .75vw , 1.4rem);
-        line-height: 1.4;
-        padding-left: 1rem;
-        &::before{
-            content: '•';
-            position: absolute;
-            top: 0;
-            left: 0;
+        line-height: 1.5;
+        &:not(:last-child) {
+            margin-bottom: .5rem;
         }
+        // padding-left: 1rem;
+        // &::before{
+        //     content: '•';
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
     }
 }
 
