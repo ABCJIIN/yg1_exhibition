@@ -198,7 +198,7 @@ body * {
 .list-type > li {
   position: relative;
   color: #7E7E7E;
-  font-size: clamp(12px, 0.75vw, 1.4rem);
+  font-size: clamp(12px, 0.9vw, 1.4rem);
   line-height: 1.5;
 }
 .list-type > li:not(:last-child) {
@@ -469,7 +469,7 @@ body * {
 .list-type > li {
   position: relative;
   color: #7E7E7E;
-  font-size: clamp(12px, 0.75vw, 1.4rem);
+  font-size: clamp(12px, 0.9vw, 1.4rem);
   line-height: 1.5;
 }
 .list-type > li:not(:last-child) {
@@ -557,17 +557,27 @@ button:active {
 #wrapper #wrap:not(.main) {
   padding: 6rem 4rem 13rem;
 }
+@media (max-width: 1300px) {
+  #wrapper #wrap:not(.main) {
+    padding: 4.2rem 3.4rem 13rem;
+  }
+}
 @media (max-width: 1060px) {
   #wrapper #wrap:not(.main) {
-    padding: 2.4rem 2.6rem 7.4rem;
+    padding: 2.4rem 2.6rem 7.8rem;
   }
 }
 #wrapper #wrap:not(.main) .wrap-inner {
-  height: calc(100vh - 18.5rem);
+  height: calc(100vh - 19rem);
+}
+@media (max-width: 1300px) {
+  #wrapper #wrap:not(.main) .wrap-inner {
+    height: calc(100vh - 17.2rem);
+  }
 }
 @media (max-width: 1060px) {
   #wrapper #wrap:not(.main) .wrap-inner {
-    height: calc(100vh - 9.8rem);
+    height: calc(100vh - 10.2rem);
   }
 }
 #wrapper #wrap:not(.main) .wrap-inner {
@@ -578,7 +588,7 @@ button:active {
 }
 #wrapper #wrap .wrap-inner {
   position: relative;
-  overflow-x: auto;
+  overflow-y: auto;
 }
 
 /* lnb */
@@ -595,17 +605,27 @@ button:active {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 1300px) {
+  #lnb {
+    width: 18rem;
+  }
+}
 @media (max-width: 1060px) {
   #lnb {
-    width: 14rem;
+    width: 15rem;
   }
 }
 #lnb + #wrap {
   margin-left: 24rem;
 }
+@media (max-width: 1300px) {
+  #lnb + #wrap {
+    margin-left: 18rem;
+  }
+}
 @media (max-width: 1060px) {
   #lnb + #wrap {
-    margin-left: 14rem;
+    margin-left: 15rem;
   }
 }
 #lnb::before {
@@ -620,6 +640,11 @@ button:active {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+@media (max-width: 1300px) {
+  #lnb::before {
+    top: 4.2rem;
+  }
 }
 @media (max-width: 1060px) {
   #lnb::before {
@@ -729,7 +754,7 @@ footer {
   footer {
     height: 4rem;
     padding: 0;
-    bottom: 1rem;
+    bottom: 1.4rem;
     border-radius: 1rem;
   }
 }
@@ -744,23 +769,45 @@ footer > .con-box {
   align-items: center;
 }
 footer .sns-list {
-  gap: 1.8rem;
+  gap: 2.4rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
+@media (max-width: 1300px) {
+  footer .sns-list {
+    gap: 1.6rem;
+  }
+}
+@media (max-width: 1060px) {
+  footer .sns-list {
+    gap: 1.4rem;
+  }
+}
 footer .sns-list > li {
   max-width: 4rem;
   max-height: 4rem;
+  padding: 0.2rem;
 }
 footer .sns-list > li a {
   max-width: 100%;
   width: clamp(1.8rem, 2.8vw, 4rem);
+  height: 100%;
+  text-align: center;
 }
 footer .sns-list > li a > img {
   max-width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  object-fit: contain;
   filter: invert(60%) sepia(7%) saturate(706%) hue-rotate(184deg) brightness(91%) contrast(87%);
+}
+@media (max-width: 1060px) {
+  footer .sns-list > li a > img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 footer .fix-controls ul {
   gap: 1.8rem;
@@ -772,10 +819,13 @@ footer .fix-controls ul {
 footer .fix-controls ul > li {
   max-width: 4rem;
   max-height: 4rem;
+  padding: 0.2rem;
 }
 footer .fix-controls ul > li a {
   max-width: 100%;
   width: clamp(1.8rem, 2.8vw, 4rem);
+  height: 100%;
+  text-align: center;
 }
 footer .fix-controls ul > li a.prev, footer .fix-controls ul > li a.next {
   opacity: 0.6;
@@ -786,7 +836,16 @@ footer .fix-controls ul > li a.prev:hover, footer .fix-controls ul > li a.next:h
 }
 footer .fix-controls ul > li a > img {
   max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  vertical-align: middle;
   filter: invert(60%) sepia(7%) saturate(706%) hue-rotate(184deg) brightness(91%) contrast(87%);
+}
+@media (max-width: 1060px) {
+  footer .fix-controls ul > li a > img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 footer .ft-info {
   gap: 4rem;
@@ -1129,6 +1188,7 @@ footer .ft-info .lang-wrap .tit::before {
   font-size: clamp(2rem, 2.2vw, 4rem);
   font-weight: bold;
   border-bottom: 2px solid #ED1C24;
+  letter-spacing: -0.02em;
 }
 #wrap .pd-wrap .pd-detail-list {
   margin-top: clamp(4rem, 8vh, 8.6rem);
