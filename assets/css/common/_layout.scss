@@ -59,7 +59,8 @@
         @include notebook{top: 2.4rem;}
     }
     > ul {
-        padding-left: clamp(2rem, 1.5vw, 6rem);
+        // padding-left: clamp(2rem, 1.5vw, 6rem);
+        padding-left: 2vw;
         gap: clamp(1.6rem, 2.1vw, 4rem);
         @include flexbox(column, flex-start, flex-start);
         li {
