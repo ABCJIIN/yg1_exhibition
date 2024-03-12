@@ -197,7 +197,7 @@ body{
     > li{
         position: relative;
         color: #7E7E7E;
-        font-size: clamp(12px , .75vw , 1.4rem);
+        font-size: clamp(12px , .9vw , 1.4rem);
         line-height: 1.5;
         &:not(:last-child) {
             margin-bottom: .5rem;
