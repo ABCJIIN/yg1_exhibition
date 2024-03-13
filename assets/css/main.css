@@ -1069,7 +1069,8 @@ footer .ft-info .lang-wrap .tit::before {
 #wrap.main .container .main-cont {
   width: calc(100% - 8rem);
   max-width: 1440px;
-  min-height: 70%;
+  height: 70%;
+  max-height: 56.8rem;
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr 1fr 1.2fr;
@@ -1077,7 +1078,7 @@ footer .ft-info .lang-wrap .tit::before {
 @media (max-width: 1060px) {
   #wrap.main .container .main-cont {
     gap: 1rem;
-    min-height: auto;
+    max-height: 35rem;
   }
 }
 #wrap.main .container .main-cont > div {
