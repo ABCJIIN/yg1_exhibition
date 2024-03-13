@@ -30,13 +30,16 @@
             .main-cont {
                 width: calc(100% - 8rem);
                 max-width: 1440px;
-                min-height: 70%;
+                // min-height: 70%;
+                height: 70%;
+                max-height: 56.8rem;
                 display: grid;
                 gap: 2rem;
                 grid-template-columns: 1fr 1fr 1fr 1.2fr;
                 @include notebook{
                     gap: 1rem;
-                    min-height: auto;
+                    // min-height: auto;
+                    max-height: 35rem;
                 }
                 > div {
                     // min-height: 28rem;
